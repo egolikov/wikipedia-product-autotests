@@ -3,6 +3,7 @@ package qa.guru.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
 
@@ -34,18 +35,21 @@ public class OnboardingScreenPage {
         return this;
     }
 
-    public SelenideElement getAddOrEditLanguageButton() {
+    public OnboardingScreenPage checkAddOrEditLanguageButton() {
+        addOrEditLanguageButton.shouldBe(visible);
 
-        return addOrEditLanguageButton;
+        return this;
     }
 
-    public SelenideElement getAcceptButton() {
+    public OnboardingScreenPage checkAcceptButton() {
+        acceptButton.shouldBe(visible);
 
-        return acceptButton;
+        return this;
     }
 
-    public SelenideElement getRejectButton() {
+    public OnboardingScreenPage checkRejectButton() {
+        rejectButton.shouldBe(visible);
 
-        return rejectButton;
+        return this;
     }
 }

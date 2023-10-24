@@ -3,6 +3,7 @@ package qa.guru.tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import qa.guru.pages.ExplorePage;
 import qa.guru.pages.OnboardingScreenPage;
 import qa.guru.pages.SearchPage;
 import qa.guru.pages.components.NavTabComponents;
@@ -14,10 +15,11 @@ public class WikiLocalEmulatorTest extends TestBase {
     OnboardingScreenPage onboardingScreenPage = new OnboardingScreenPage();
     NavTabComponents navTabComponents = new NavTabComponents();
     SearchPage searchPage = new SearchPage();
+    ExplorePage explorePage = new ExplorePage();
 
     @Test
     @Tag("local")
-    @DisplayName("Проверка экранов ввода в приложение")
+    @DisplayName("Проверка экранов вводной информации приложения")
     void onboardingScreenTest() {
 
         step("Проверка отображения заголовка на первой странице", () -> {
@@ -25,7 +27,7 @@ public class WikiLocalEmulatorTest extends TestBase {
         });
 
         step("Проверка наличия кнопки +Add or edit language на первой странице", () -> {
-            onboardingScreenPage.getAddOrEditLanguageButton();
+            onboardingScreenPage.checkAddOrEditLanguageButton();
         });
 
         step("Переход на вторую страницу", () -> {
@@ -53,24 +55,24 @@ public class WikiLocalEmulatorTest extends TestBase {
         });
 
         step("Проверка наличия кнопки Accept на четвертой странице", () -> {
-            onboardingScreenPage.getAcceptButton();
+            onboardingScreenPage.checkAcceptButton();
         });
 
         step("Проверка наличия кнопки Reject на четвертой странице", () -> {
-            onboardingScreenPage.getRejectButton();
+            onboardingScreenPage.checkRejectButton();
         });
     }
 
     @Test
     @Tag("local")
     @DisplayName("Проверка поиска")
-    void searchTest() {
+    void searchPageTest() {
 
         step("Нажатие на кнопку Skip", () -> {
             onboardingScreenPage.clickSkipButton();
         });
 
-        step("Нажатие на кнопку Поиска на панели Меню", () -> {
+        step("Нажатие на кнопку Search на панели Меню", () -> {
             navTabComponents.clickSearchComponentButton();
         });
 
@@ -93,5 +95,39 @@ public class WikiLocalEmulatorTest extends TestBase {
         step("Проверка наличия контента в открытой статье", () -> {
             searchPage.checkSearchResultContent();
         });
+    }
+
+    @Test
+    @Tag("local")
+    @DisplayName("Проверка страницы Explore")
+    void explorePageTest() {
+
+        step("Нажатие на кнопку Skip", () -> {
+            onboardingScreenPage.clickSkipButton();
+        });
+
+        step("Нажатие на кнопку Explore на панели Меню", () -> {
+            navTabComponents.clickExploreComponentButton();
+        });
+
+        step("Проверка наличия картинки на странице", () -> {
+            explorePage.checkHeaderImage();
+        });
+
+        step("Проверка наличия текста на странице", () -> {
+            explorePage.checkAnnouncementText("Customize your Explore feed\n" +
+                    "\n" +
+                    "You can now choose what to show on your feed, and also prioritize your favorite types of content.");
+        });
+
+        step("Проверка наличия кнопки Customize на странице", () -> {
+            explorePage.checkCustomizeButton();
+        });
+
+        step("Проверка наличия кнопки Got It на странице", () -> {
+            explorePage.checkGotItButton();
+        });
+
+
     }
 }
