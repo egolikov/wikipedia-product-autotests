@@ -50,7 +50,7 @@ public class EmulatorDriver implements WebDriverProvider {
     private String getAppPath() {
         String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/" +
                 "releases/download/latest/app-alpha-universal-release.apk";
-        String appPath = "src/test/resources/apps/app-alpha-universal-release.apk";
+        String appPath = "src/test/resources/apk/app-alpha-universal-release.apk";
 
 
         File app = new File(appPath);
