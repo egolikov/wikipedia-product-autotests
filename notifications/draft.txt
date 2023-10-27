@@ -1,5 +1,0 @@
-autotests_egolikov_bot
-6471401020:AAFK3SoItsi6qzkOESXATp-jLqStaaQsBOI
-https://api.telegram.org/bot6471401020:AAFK3SoItsi6qzkOESXATp-jLqStaaQsBOI/getUpdates
--1001937165281
-java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.3.0.jar
