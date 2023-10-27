@@ -3,9 +3,7 @@ package qa.guru.tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import qa.guru.pages.ExplorePage;
-import qa.guru.pages.OnboardingScreenPage;
-import qa.guru.pages.SearchPage;
+import qa.guru.pages.*;
 import qa.guru.pages.components.NavTabComponents;
 
 import static io.qameta.allure.Allure.step;
@@ -16,6 +14,9 @@ public class WikiLocalEmulatorTest extends TestBase {
     NavTabComponents navTabComponents = new NavTabComponents();
     SearchPage searchPage = new SearchPage();
     ExplorePage explorePage = new ExplorePage();
+    SavedPage savedPage = new SavedPage();
+    EditsPage editsPage = new EditsPage();
+    MoreMenuPage moreMenuPage = new MoreMenuPage();
 
     @Test
     @Tag("local")
@@ -128,6 +129,111 @@ public class WikiLocalEmulatorTest extends TestBase {
             explorePage.checkGotItButton();
         });
 
+        step("Проверка наличия кнопки Голосового поиска на странице", () -> {
+            explorePage.checkVoiceSearchButton();
+        });
 
+        step("Проверка наличия кнопки Текстового поиска на странице", () -> {
+            explorePage.checkSearchButton();
+        });
+    }
+
+    @Test
+    @Tag("local")
+    @DisplayName("Проверка страницы Saved")
+    void savedPageTest() {
+
+        step("Нажатие на кнопку Skip", () -> {
+            onboardingScreenPage.clickSkipButton();
+        });
+
+        step("Нажатие на кнопку Explore на панели Меню", () -> {
+            navTabComponents.clickSavedComponentButton();
+        });
+
+        step("Проверка наличия картинки на странице", () -> {
+            savedPage.checkMainImage();
+        });
+
+        step("Проверка наличия заголовка на странице", () -> {
+            savedPage.checkTitleText("Sync reading lists");
+        });
+
+        step("Проверка наличия текста на странице", () -> {
+            savedPage.checkMessageText("Reading lists can now be synced across devices. Log in to your Wikipedia account and allow your lists to be saved.");
+        });
+
+        step("Проверка наличия кнопки Log In / Join Wikipedia на странице", () -> {
+            savedPage.checkLoginButton();
+        });
+
+        step("Проверка наличия кнопки Not now на странице", () -> {
+            savedPage.checkNotNowButton();
+        });
+
+        step("Проверка наличия кнопки с листом на странице", () -> {
+            savedPage.checkMenuSearchListButton();
+        });
+
+        step("Проверка наличия кнопки с настройками на странице", () -> {
+            savedPage.checkMenuOverflowButton();
+        });
+    }
+
+    @Test
+    @Tag("local")
+    @DisplayName("Проверка страницы Edits")
+    void EditsPageTest() {
+
+        step("Нажатие на кнопку Skip", () -> {
+            onboardingScreenPage.clickSkipButton();
+        });
+
+        step("Нажатие на кнопку Explore на панели Меню", () -> {
+            navTabComponents.clickEditsComponentButton();
+        });
+
+        step("Проверка наличия картинки на странице", () -> {
+            editsPage.checkMainImage();
+        });
+
+        step("Проверка наличия заголовка на странице", () -> {
+            editsPage.checkTitleText("Did you know that everyone can edit Wikipedia?");
+        });
+
+        step("Проверка наличия текста на странице", () -> {
+            editsPage.checkMessageText("Suggested edits is a new way to edit Wikipedia on Android. It helps you make small but vital contributions to Wikipedia.\n" +
+                    "Our goal is to make editing easier and more accessible for everyone! Log in or join Wikipedia to get started.");
+        });
+
+        step("Проверка наличия кнопки Log In / Join Wikipedia на странице", () -> {
+            editsPage.checkLoginButton();
+        });
+    }
+
+    @Test
+    @Tag("local")
+    @DisplayName("Проверка страницы More")
+    void MoreMenuPageTest() {
+
+        step("Нажатие на кнопку Skip", () -> {
+            onboardingScreenPage.clickSkipButton();
+        });
+
+        step("Нажатие на кнопку Explore на панели Меню", () -> {
+            navTabComponents.clickMoreComponentButton();
+        });
+
+        step("Проверка наличия кнопки Log In / Join Wikipedia на странице", () -> {
+            moreMenuPage.checkLoginButton();
+        });
+
+        step("Проверка наличия кнопки Settings на странице", () -> {
+            moreMenuPage.checkSettingsButton();
+        });
+
+        step("Проверка наличия кнопки Donate на странице", () -> {
+            moreMenuPage.checkDonateButton();
+        });
     }
 }

@@ -2,7 +2,6 @@ package qa.guru.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import io.appium.java_client.AppiumBy;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.visible;
@@ -19,7 +18,7 @@ public class SearchPage {
             searchResultContent = $(id("org.wikipedia.alpha:id/page_web_view"));
 
     private final ElementsCollection
-            searchResultListItems = $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")),
+            searchResultListItems = $$(id("org.wikipedia.alpha:id/page_list_item_title")),
             searchResultListDescriptions = $$(id("org.wikipedia.alpha:id/page_list_item_description"));
 
     public SearchPage clickSearchButton() {
@@ -30,21 +29,25 @@ public class SearchPage {
 
     public SearchPage setSearchValue(String value) {
         searchInputField.sendKeys(value);
+
         return this;
     }
 
     public SearchPage checkResultList() {
         searchResultListItems.shouldHave(sizeGreaterThan(0));
+
         return this;
     }
 
     public SearchPage clickFirstElementResultList() {
         searchResultListDescriptions.first().click();
+
         return this;
     }
 
     public SearchPage checkSearchResultContent() {
         searchResultContent.shouldBe(visible);
+
         return this;
     }
 }
