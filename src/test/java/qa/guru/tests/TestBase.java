@@ -2,8 +2,8 @@ package qa.guru.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import qa.guru.drivers.BrowserstackDriver;
-import qa.guru.drivers.EmulatorDriver;
+import qa.guru.drivers.RemoteDriver;
+import qa.guru.drivers.LocalDriver;
 import qa.guru.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -19,10 +19,10 @@ public class TestBase {
     static void beforeAll() {
         switch (deviceHost) {
             case "browserstack":
-                Configuration.browser = BrowserstackDriver.class.getName();
+                Configuration.browser = RemoteDriver.class.getName();
                 break;
             case "local":
-                Configuration.browser = EmulatorDriver.class.getName();
+                Configuration.browser = LocalDriver.class.getName();
                 break;
         }
         Configuration.browserSize = null;

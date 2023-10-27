@@ -1,14 +1,14 @@
 package qa.guru.helpers;
 
 import org.aeonbits.owner.ConfigFactory;
-import qa.guru.config.RemoteBrowserStackConfig;
+import qa.guru.config.RemoteConfig;
 
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
 
 public class Browserstack {
 
-    static RemoteBrowserStackConfig config = ConfigFactory.create(RemoteBrowserStackConfig.class, System.getProperties());
+    static RemoteConfig config = ConfigFactory.create(RemoteConfig.class, System.getProperties());
 
     public static String videoUrl(String sessionId) {
 

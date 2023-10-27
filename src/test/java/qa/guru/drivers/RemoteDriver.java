@@ -1,7 +1,7 @@
 package qa.guru.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import qa.guru.config.RemoteBrowserStackConfig;
+import qa.guru.config.RemoteConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -13,8 +13,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
-public class BrowserstackDriver implements WebDriverProvider {
-    static RemoteBrowserStackConfig config = ConfigFactory.create(RemoteBrowserStackConfig.class, System.getProperties());
+public class RemoteDriver implements WebDriverProvider {
+    static RemoteConfig config = ConfigFactory.create(RemoteConfig.class, System.getProperties());
 
     @Nonnull
     @Override

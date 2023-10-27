@@ -8,7 +8,7 @@ import qa.guru.pages.components.NavigationComponents;
 
 import static io.qameta.allure.Allure.step;
 
-public class WikiLocalEmulatorTest extends TestBase {
+public class WikiLocalTest extends TestBase {
 
     OnboardingScreenPage onboardingScreenPage = new OnboardingScreenPage();
     NavigationComponents navigationComponents = new NavigationComponents();

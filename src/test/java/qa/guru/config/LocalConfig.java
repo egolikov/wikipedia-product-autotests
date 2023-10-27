@@ -7,7 +7,7 @@ import org.aeonbits.owner.Config;
         "classpath:properties/local.properties"
 })
 
-public interface LocalEmulatorConfig extends Config {
+public interface LocalConfig extends Config {
 
         @Key("platformName")
         String platformName();

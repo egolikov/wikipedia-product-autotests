@@ -1,7 +1,7 @@
 package qa.guru.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import qa.guru.config.LocalEmulatorConfig;
+import qa.guru.config.LocalConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
@@ -18,9 +18,9 @@ import java.net.URL;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
-public class EmulatorDriver implements WebDriverProvider {
+public class LocalDriver implements WebDriverProvider {
 
-    LocalEmulatorConfig config = ConfigFactory.create(LocalEmulatorConfig.class, System.getProperties());
+    LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
     public static URL getAppiumServerUrl() {
         try {

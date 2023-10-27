@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
         "classpath:properties/remote.properties"
 })
 
-public interface RemoteBrowserStackConfig extends Config {
+public interface RemoteConfig extends Config {
 
         @Key("user")
         String getUser();

@@ -9,7 +9,7 @@ import qa.guru.pages.components.NavigationComponents;
 
 import static io.qameta.allure.Allure.step;
 
-public class WikiRemoteBrowserStackTest extends TestBase {
+public class WikiRemoteTest extends TestBase {
 
     SearchPage searchPage = new SearchPage();
     SearchResultPage searchResultPage = new SearchResultPage();
@@ -20,7 +20,7 @@ public class WikiRemoteBrowserStackTest extends TestBase {
     LanguageComponent languageComponent = new LanguageComponent();
 
     @Test
-    @Tag("browserstack")
+    @Tag("remote")
     @DisplayName("Проверка поиска")
     void successfulWikiSearchTest() {
 
@@ -50,7 +50,7 @@ public class WikiRemoteBrowserStackTest extends TestBase {
     }
 
     @Test
-    @Tag("browserstack")
+    @Tag("remote")
     @DisplayName("Проверка страницы Авторизации")
     void checkLogInButtonTest() {
 
@@ -84,7 +84,7 @@ public class WikiRemoteBrowserStackTest extends TestBase {
     }
 
     @Test
-    @Tag("browserstack")
+    @Tag("remote")
     @DisplayName("Смена языка")
     void changeLanguage() {
 
