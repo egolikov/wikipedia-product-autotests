@@ -100,7 +100,7 @@ public class WikiRemoteTest extends TestBase {
             settingsPage.clickLanguageField();
         });
 
-        step("Выбрать язык", () -> {
+        step("Выбор язык", () -> {
             languageComponent.selectLanguage("Svenska");
         });
 
