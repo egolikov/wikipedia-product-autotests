@@ -18,7 +18,7 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         switch (deviceHost) {
-            case "browserstack":
+            case "remote":
                 Configuration.browser = RemoteDriver.class.getName();
                 break;
             case "local":
@@ -41,7 +41,7 @@ public class TestBase {
         if (deviceHost.equals("local")) {
             Attach.screenshotAs("Last screenshot");
         }
-        if (deviceHost.equals("browserstack")) {
+        if (deviceHost.equals("remote")) {
             Attach.addVideo(sessionId);
         }
         closeWebDriver();
