@@ -4,19 +4,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qa.guru.pages.*;
-import qa.guru.pages.components.NavTabComponents;
+import qa.guru.pages.components.NavigationComponents;
 
 import static io.qameta.allure.Allure.step;
 
 public class WikiLocalEmulatorTest extends TestBase {
 
     OnboardingScreenPage onboardingScreenPage = new OnboardingScreenPage();
-    NavTabComponents navTabComponents = new NavTabComponents();
+    NavigationComponents navigationComponents = new NavigationComponents();
     SearchPage searchPage = new SearchPage();
     ExplorePage explorePage = new ExplorePage();
     SavedPage savedPage = new SavedPage();
     EditsPage editsPage = new EditsPage();
     MoreMenuPage moreMenuPage = new MoreMenuPage();
+    SearchResultPage searchResultPage = new SearchResultPage();
 
     @Test
     @Tag("local")
@@ -74,7 +75,7 @@ public class WikiLocalEmulatorTest extends TestBase {
         });
 
         step("Нажатие на кнопку Search на панели Меню", () -> {
-            navTabComponents.clickSearchComponentButton();
+            navigationComponents.clickSearchComponentButton();
         });
 
         step("Нажатие на кнопку Поиска на странице", () -> {
@@ -86,15 +87,15 @@ public class WikiLocalEmulatorTest extends TestBase {
         });
 
         step("Проверка наличия контента в списке результов поиска", () -> {
-            searchPage.checkResultList();
+            searchResultPage.checkResultList();
         });
 
         step("Выбор первой статьи из списка результов поиска", () -> {
-            searchPage.clickFirstElementResultList();
+            searchResultPage.clickFirstElementResultList();
         });
 
         step("Проверка наличия контента в открытой статье", () -> {
-            searchPage.checkSearchResultContent();
+            searchResultPage.checkSearchResultContent();
         });
     }
 
@@ -108,7 +109,7 @@ public class WikiLocalEmulatorTest extends TestBase {
         });
 
         step("Нажатие на кнопку Explore на панели Меню", () -> {
-            navTabComponents.clickExploreComponentButton();
+            navigationComponents.clickExploreComponentButton();
         });
 
         step("Проверка наличия картинки на странице", () -> {
@@ -148,7 +149,7 @@ public class WikiLocalEmulatorTest extends TestBase {
         });
 
         step("Нажатие на кнопку Explore на панели Меню", () -> {
-            navTabComponents.clickSavedComponentButton();
+            navigationComponents.clickSavedComponentButton();
         });
 
         step("Проверка наличия картинки на странице", () -> {
@@ -190,7 +191,7 @@ public class WikiLocalEmulatorTest extends TestBase {
         });
 
         step("Нажатие на кнопку Explore на панели Меню", () -> {
-            navTabComponents.clickEditsComponentButton();
+            navigationComponents.clickEditsComponentButton();
         });
 
         step("Проверка наличия картинки на странице", () -> {
@@ -221,7 +222,7 @@ public class WikiLocalEmulatorTest extends TestBase {
         });
 
         step("Нажатие на кнопку Explore на панели Меню", () -> {
-            navTabComponents.clickMoreComponentButton();
+            navigationComponents.clickMoreComponentButton();
         });
 
         step("Проверка наличия кнопки Log In / Join Wikipedia на странице", () -> {

@@ -3,68 +3,110 @@ package qa.guru.tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import qa.guru.pages.*;
+import qa.guru.pages.components.LanguageComponent;
+import qa.guru.pages.components.NavigationComponents;
 
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.qameta.allure.Allure.step;
-import static org.openqa.selenium.By.id;
-
 
 public class WikiRemoteBrowserStackTest extends TestBase {
 
+    SearchPage searchPage = new SearchPage();
+    SearchResultPage searchResultPage = new SearchResultPage();
+    ErrorsResultPage errorsResultPage = new ErrorsResultPage();
+    NavigationComponents navigationComponents = new NavigationComponents();
+    LoginPage loginPage = new LoginPage();
+    SettingsPage settingsPage = new SettingsPage();
+    LanguageComponent languageComponent = new LanguageComponent();
+
     @Test
     @Tag("browserstack")
-    @DisplayName("Проверка поиска в Wikipedia")
+    @DisplayName("Проверка поиска")
     void successfulWikiSearchTest() {
 
-        step("Нажать на поле Поиска", () ->
-                $(accessibilityId("Search Wikipedia"))
-                        .click());
+        step("Нажатие на кнопку Поиска на странице", () -> {
+            searchPage.clickSearchButton();
+        });
 
-        step("Ввести в поле Поиска Hockey", () ->
-                $(id("org.wikipedia.alpha:id/search_src_text"))
-                        .sendKeys("Hockey"));
+        step("Ввод текста в поле Поиска", () -> {
+            searchPage.setSearchValue("Hockey");
+        });
 
-        step("Проверка наличия контента в результате Поиска", () ->
-                $$(id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(sizeGreaterThan(0)));
+        step("Проверка наличия контента в списке результов поиска", () -> {
+            searchResultPage.checkResultList();
+        });
 
-        step("Открыть первый объект из результата поиска", () ->
-                $$(id("org.wikipedia.alpha:id/page_list_item_container"))
-                        .first()
-                        .click());
+        step("Выбор первой статьи из списка результов поиска", () -> {
+            searchResultPage.clickFirstElementResultList();
+        });
+
+        step("Проверка наличия кнопки Go Back", () -> {
+            errorsResultPage.checkGoBackButton();
+        });
 
         step("Проверка наличия текста с ошибкой", () -> {
-            $(id("org.wikipedia.alpha:id/view_wiki_error_text"))
-                    .shouldBe(visible);
+            errorsResultPage.checkErrorText("An error occurred");
         });
     }
 
     @Test
     @Tag("browserstack")
-    @DisplayName("Проверка наличия кнопки Log in")
+    @DisplayName("Проверка страницы Авторизации")
     void checkLogInButtonTest() {
 
-        step("Нажать на кнопку навигации", () ->
-                $(id("org.wikipedia.alpha:id/menu_overflow_button"))
-                        .click());
+        step("Нажатие на кнопку навигации", () -> {
+            navigationComponents.clickNavigationButton();
+        });
 
-        step("Проверить наличие кнопки Log in to Wikipedia", () ->
-                $(id("org.wikipedia.alpha:id/explore_overflow_account_name"))
-                        .shouldHave(text("Log in to Wikipedia")));
+        step("Нажатие на кнопку Login в меню навигации", () -> {
+            navigationComponents.clickLogInNavigationButton();
+        });
 
-        step("Нажать на кнопку Log in to Wikipedia", () ->
-                $(id("org.wikipedia.alpha:id/explore_overflow_account_name"))
-                        .click());
+        step("Проверка наличия поля Login на странице Авторизации", () -> {
+            loginPage.checkLoginField();
+        });
 
-        step("Проверить наличие кнопки Log in на открывшейся форме авторизации", () ->
-                $(id("org.wikipedia.alpha:id/login_button"))
-                        .shouldHave(text("Log in")));
+        step("Проверка наличия поля Password на странице Авторизации", () -> {
+            loginPage.checkPasswordField();
+        });
 
+        step("Проверка наличия кнопки Login на странице Авторизации", () -> {
+            loginPage.checkLoginButton();
+        });
+
+        step("Проверка наличия ссылки Privacy policy на странице Авторизации", () -> {
+            loginPage.checkPolicyLink();
+        });
+
+        step("Проверка наличия ссылки Don't have an account? Join Wikipedia на странице Авторизации", () -> {
+            loginPage.checkJoinWikipediaLink();
+        });
+    }
+
+    @Test
+    @Tag("browserstack")
+    @DisplayName("Смена языка")
+    void changeLanguage() {
+
+        step("Нажатие на кнопку навигации", () -> {
+            navigationComponents.clickNavigationButton();
+        });
+
+        step("Открытие пункта меню Настройки", () -> {
+            navigationComponents.clickSettingsNavigationButton();
+        });
+
+        step("Открытие панели выбораа языка", () -> {
+            settingsPage.clickLanguageField();
+        });
+
+        step("Выбрать язык", () -> {
+            languageComponent.selectLanguage("Svenska");
+        });
+
+        step("Проверка смены языка", () -> {
+            settingsPage.checkLanguage("Svenska");
+        });
     }
 }
 
