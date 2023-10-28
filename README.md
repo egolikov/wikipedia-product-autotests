@@ -59,7 +59,7 @@ gradle clean local_test -DdeviceHost=local
 Запуск удаленно (remote):
 
 ```bash  
-gradle clean browserstack_test -DdeviceHost=browserstack
+gradle clean remote_test -DdeviceHost=remote
 ```
 
 > Для запуска необходимо нажать "Build now"
@@ -85,7 +85,7 @@ gradle clean browserstack_test -DdeviceHost=browserstack
 <img title="Allure Graphics2" src="images/screen/AllureG2.png" width="850">  
 </p>
 
-## <img alt="Allure_TO" height="25" src="images/logo/Allure_TO.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/3669/dashboards">Allure TestOps</a>
+## <img alt="Allure_TO" height="25" src="images/logo/Allure_TO.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/3732/dashboards">Allure TestOps</a>
 
 ## 🖨️ Основная страница отчёта
 
