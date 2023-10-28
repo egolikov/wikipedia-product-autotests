@@ -93,7 +93,7 @@ public class WikiRemoteTest extends TestBase {
 
     @Severity(NORMAL)
     @Test
-    @DisplayName("Смена языка")
+    @DisplayName("Проверка смены языка")
     void changeLanguage() {
 
         step("Нажатие на кнопку навигации", () -> {
