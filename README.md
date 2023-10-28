@@ -116,10 +116,10 @@ ____
 
 ____
 
-## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Видеопример выполнения теста на Selenoid
+## <img alt="Browserstack" height="25" src="images/logo/Browserstack.svg" width="25"/></a> Видеопример выполнения теста Browserstack
 
 ____
 <p align="center">
-<img title="Selenoid Video" src="images/screen/VideoSe.gif" width="550" height="350"  alt="video">   
+<img title="Browserstack Video" src="images/screen/Browserstack.mp4" width="550" height="350"  alt="video">   
 </p>
 
