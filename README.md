@@ -120,6 +120,6 @@ ____
 
 ____
 <p align="center">
-<img title="Browserstack Video" src="images/screen/Browserstack.gif" width="550" height="350"  alt="video">   
+<img title="Browserstack Video" src="images/screen/BrowserStack.gif" width="550" height="350"  alt="video">   
 </p>
 
