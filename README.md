@@ -48,11 +48,21 @@
 
 ## 🚀 Команда для запуска автотестов из терминала
 
-Удаленный запуск с использованием Jenkins и Selenoid (требуется логин и пароль):
+Запуск локально (local):
 
 ```bash  
-gradle clean test -Denv=remote
+gradle clean local_test -DdeviceHost=local
 ```
+
+> Внимание! Для запуска локальных тестов на компьютере должны быть установлены Android Studio, Appium Server и Appium
+
+Запуск удаленно (remote):
+
+```bash  
+gradle clean browserstack_test -DdeviceHost=browserstack
+```
+
+> Для запуска необходимо нажать "Build now"
 
 ## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://jenkins.autotests.cloud/job/baucenter-product-autotests-egolikov/7/allure/">Allure Report</a>
 
