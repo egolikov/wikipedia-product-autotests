@@ -43,7 +43,7 @@
 ## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/wikipedia-product-autotests/)
 
 <p align="center">  
-<img src="images/screen/Jenkins.png" alt="Jenkins" width="950"/></a>  
+<img src="images/screen/JenkinsBuild.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 ## 🚀 Команда для запуска автотестов из терминала
