@@ -90,13 +90,13 @@ gradle clean remote_test -DdeviceHost=remote
 ## 🖨️ Основная страница отчёта
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/OpsDash.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/OpsDashView.png" width="850">  
 </p>  
 
 ## 📄 Авто и Ручные тест-кейсы
 
 <p align="center">  
-<img title="Allure Tests" src="images/screen/OpsCases.png" width="850">  
+<img title="Allure Tests" src="images/screen/OpsCasesView.png" width="850">  
 </p>
 
 ## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-884">Jira</a>
