@@ -64,12 +64,12 @@ gradle clean browserstack_test -DdeviceHost=browserstack
 
 > Для запуска необходимо нажать "Build now"
 
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://jenkins.autotests.cloud/job/baucenter-product-autotests-egolikov/7/allure/">Allure Report</a>
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://jenkins.autotests.cloud/job/wikipedia-product-autotests/10/allure/">Allure Report</a>
 
 ## 🖨️ Основная страница отчёта
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/AllureOwer.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screen/AllureOverview.png" width="850">  
 </p>  
 
 ## 📄 Тест-кейсы
