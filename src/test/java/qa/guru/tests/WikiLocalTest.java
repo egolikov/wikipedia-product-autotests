@@ -1,5 +1,6 @@
 package qa.guru.tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -7,7 +8,14 @@ import qa.guru.pages.*;
 import qa.guru.pages.components.NavigationComponents;
 
 import static io.qameta.allure.Allure.step;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
+import static io.qameta.allure.SeverityLevel.NORMAL;
 
+@Owner("Голиков Евгений")
+@Epic(value = "Тестирование мобильного приложения Wikipedia")
+@Feature(value = "Новая фунциональность мобильного приложения Wikipedia")
+@Story("Главная функциональность")
+@Tag("local")
 public class WikiLocalTest extends TestBase {
 
     OnboardingScreenPage onboardingScreenPage = new OnboardingScreenPage();
@@ -19,8 +27,8 @@ public class WikiLocalTest extends TestBase {
     MoreMenuPage moreMenuPage = new MoreMenuPage();
     SearchResultPage searchResultPage = new SearchResultPage();
 
+    @Severity(NORMAL)
     @Test
-    @Tag("local")
     @DisplayName("Проверка экранов вводной информации приложения")
     void onboardingScreenTest() {
 
@@ -65,8 +73,8 @@ public class WikiLocalTest extends TestBase {
         });
     }
 
+    @Severity(CRITICAL)
     @Test
-    @Tag("local")
     @DisplayName("Проверка поиска")
     void searchPageTest() {
 
@@ -99,8 +107,8 @@ public class WikiLocalTest extends TestBase {
         });
     }
 
+    @Severity(NORMAL)
     @Test
-    @Tag("local")
     @DisplayName("Проверка страницы Explore")
     void explorePageTest() {
 
@@ -139,8 +147,8 @@ public class WikiLocalTest extends TestBase {
         });
     }
 
+    @Severity(NORMAL)
     @Test
-    @Tag("local")
     @DisplayName("Проверка страницы Saved")
     void savedPageTest() {
 
@@ -181,8 +189,8 @@ public class WikiLocalTest extends TestBase {
         });
     }
 
+    @Severity(NORMAL)
     @Test
-    @Tag("local")
     @DisplayName("Проверка страницы Edits")
     void EditsPageTest() {
 
@@ -212,8 +220,8 @@ public class WikiLocalTest extends TestBase {
         });
     }
 
+    @Severity(NORMAL)
     @Test
-    @Tag("local")
     @DisplayName("Проверка страницы More")
     void MoreMenuPageTest() {
 
