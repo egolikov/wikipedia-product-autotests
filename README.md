@@ -29,30 +29,22 @@
 ## 🏁 Реализованные проверки:
 
 ### При запуске локально (local):
+
 - Проверка экранов вводной информации приложения
 - Проверка поиска
 - Проверка страниц Explore, Saved, Edits, More
 
 ### При запуске удаленно (remote):
+
 - Проверка поиска
 - Проверка страницы Авторизации
 - Проверка смены языка
 
-
-## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/baucenter-product-autotests-egolikov/)
+## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/wikipedia-product-autotests/)
 
 <p align="center">  
 <img src="images/screen/Jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
-
-## 📋 Параметры сборки в Jenkins:
-
-- _STAND_BASE_URL (URL Сайта, по умолчанию baucenter.ru)_
-- _SELENOID_BASE_URL (URL Selenoid, по умолчанию selenoid.autotests.cloud)_
-- _TASK (Задачи, по умолчанию Smoke_test)_
-- _BROWSER (Браузер, по умолчанию chrome)_
-- _BROWSER_VERSION (Версия браузера, по умолчанию 100.0)_
-- _BROWSER_SIZE (Размер окна браузера, по умолчанию 2560x1440)_
 
 ## 🚀 Команда для запуска автотестов из терминала
 
