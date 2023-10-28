@@ -99,10 +99,10 @@ gradle clean remote_test -DdeviceHost=remote
 <img title="Allure Tests" src="images/screen/OpsCasesView.png" width="850">  
 </p>
 
-## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-884">Jira</a>
+## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-920">Jira</a>
 
 <p align="center">  
-<img title="Jira" src="images/screen/JiraSc.png" width="">  
+<img title="Jira" src="images/screen/JiraView.png" width="">  
 </p>
 
 ____
@@ -111,7 +111,7 @@ ____
 
 ____
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/Teleg.png" width="550">  
+<img title="Allure Overview Dashboard" src="images/screen/TelegView.png" width="550">  
 </p>
 
 ____
