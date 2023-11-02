@@ -14,7 +14,7 @@ import java.net.URL;
 
 
 public class RemoteDriver implements WebDriverProvider {
-    static RemoteConfig config = ConfigFactory.create(RemoteConfig.class, System.getProperties());
+    private final static RemoteConfig config = ConfigFactory.create(RemoteConfig.class, System.getProperties());
 
     @Nonnull
     @Override

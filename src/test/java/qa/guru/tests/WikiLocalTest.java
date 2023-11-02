@@ -18,14 +18,14 @@ import static io.qameta.allure.SeverityLevel.NORMAL;
 @Tag("local")
 public class WikiLocalTest extends TestBase {
 
-    OnboardingScreenPage onboardingScreenPage = new OnboardingScreenPage();
-    NavigationComponents navigationComponents = new NavigationComponents();
-    SearchPage searchPage = new SearchPage();
-    ExplorePage explorePage = new ExplorePage();
-    SavedPage savedPage = new SavedPage();
-    EditsPage editsPage = new EditsPage();
-    MoreMenuPage moreMenuPage = new MoreMenuPage();
-    SearchResultPage searchResultPage = new SearchResultPage();
+    protected OnboardingScreenPage onboardingScreenPage = new OnboardingScreenPage();
+    protected NavigationComponents navigationComponents = new NavigationComponents();
+    protected SearchPage searchPage = new SearchPage();
+    protected ExplorePage explorePage = new ExplorePage();
+    protected SavedPage savedPage = new SavedPage();
+    protected EditsPage editsPage = new EditsPage();
+    protected MoreMenuPage moreMenuPage = new MoreMenuPage();
+    protected SearchResultPage searchResultPage = new SearchResultPage();
 
     @Severity(NORMAL)
     @Test

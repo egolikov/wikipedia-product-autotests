@@ -19,13 +19,13 @@ import static io.qameta.allure.SeverityLevel.NORMAL;
 @Tag("remote")
 public class WikiRemoteTest extends TestBase {
 
-    SearchPage searchPage = new SearchPage();
-    SearchResultPage searchResultPage = new SearchResultPage();
-    ErrorsResultPage errorsResultPage = new ErrorsResultPage();
-    NavigationComponents navigationComponents = new NavigationComponents();
-    LoginPage loginPage = new LoginPage();
-    SettingsPage settingsPage = new SettingsPage();
-    LanguageComponent languageComponent = new LanguageComponent();
+    protected SearchPage searchPage = new SearchPage();
+    protected SearchResultPage searchResultPage = new SearchResultPage();
+    protected ErrorsResultPage errorsResultPage = new ErrorsResultPage();
+    protected NavigationComponents navigationComponents = new NavigationComponents();
+    protected LoginPage loginPage = new LoginPage();
+    protected SettingsPage settingsPage = new SettingsPage();
+    protected LanguageComponent languageComponent = new LanguageComponent();
 
     @Severity(CRITICAL)
     @Test

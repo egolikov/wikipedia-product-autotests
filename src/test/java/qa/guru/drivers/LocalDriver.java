@@ -20,7 +20,7 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class LocalDriver implements WebDriverProvider {
 
-    LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
+    private static final LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
     public static URL getAppiumServerUrl() {
         try {
