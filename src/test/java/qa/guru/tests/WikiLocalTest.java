@@ -156,7 +156,7 @@ public class WikiLocalTest extends TestBase {
             onboardingScreenPage.clickSkipButton();
         });
 
-        step("Нажатие на кнопку Explore на панели Меню", () -> {
+        step("Нажатие на кнопку Saved на панели Меню", () -> {
             navigationComponents.clickSavedComponentButton();
         });
 
@@ -198,7 +198,7 @@ public class WikiLocalTest extends TestBase {
             onboardingScreenPage.clickSkipButton();
         });
 
-        step("Нажатие на кнопку Explore на панели Меню", () -> {
+        step("Нажатие на кнопку Edit на панели Меню", () -> {
             navigationComponents.clickEditsComponentButton();
         });
 
@@ -229,7 +229,7 @@ public class WikiLocalTest extends TestBase {
             onboardingScreenPage.clickSkipButton();
         });
 
-        step("Нажатие на кнопку Explore на панели Меню", () -> {
+        step("Нажатие на кнопку More на панели Меню", () -> {
             navigationComponents.clickMoreComponentButton();
         });
 
