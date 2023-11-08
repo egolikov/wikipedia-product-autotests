@@ -45,7 +45,7 @@ public class WikiRemoteTest extends TestBase {
         });
 
         step("Выбор первой статьи из списка результов поиска", () -> {
-            searchResultPage.clickFirstElementResultList();
+            searchResultPage.clickElementInResultList();
         });
 
         step("Проверка наличия кнопки Go Back", () -> {

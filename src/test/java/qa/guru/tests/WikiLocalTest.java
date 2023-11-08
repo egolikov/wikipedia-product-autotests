@@ -99,11 +99,11 @@ public class WikiLocalTest extends TestBase {
         });
 
         step("Выбор первой статьи из списка результов поиска", () -> {
-            searchResultPage.clickFirstElementResultList();
+            searchResultPage.clickElementInResultList();
         });
 
         step("Проверка наличия контента в открытой статье", () -> {
-            searchResultPage.checkSearchResultContent();
+            searchResultPage.checkSearchResultContent("Hockey");
         });
     }
 
